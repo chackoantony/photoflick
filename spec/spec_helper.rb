@@ -1,5 +1,8 @@
 require "bundler/setup"
+require "webmock/rspec"
 require "photo_flick"
+
+
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
@@ -8,4 +11,5 @@ RSpec.configure do |config|
   config.expect_with :rspec do |c|
     c.syntax = :expect
   end
+
 end

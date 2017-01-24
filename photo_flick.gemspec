@@ -7,11 +7,14 @@ Gem::Specification.new do |spec|
   spec.name          = "photo_flick"
   spec.version       = PhotoFlick::VERSION
   spec.authors       = ["Sunil Antony"]
-  spec.email         = ["chackochi16@gmail.com"]
+  spec.email         = ["chackoantonydaniel@gmail.com"]
 
-  spec.summary       = %q{Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{Write a longer description or delete this line.}
-  spec.homepage      = "http://photo-flick.com"
+  spec.summary       = %q{Coverts Flickr searched images to collage}
+  spec.description   = %q{PhotoFlick is Ruby gem with which you can create image 
+                          collages from Flickr images. You just need to provide some 
+                          search keywords and PhotoFlick will search through Flickr 
+                          to get images and create collage for you. }
+  spec.homepage      = "https://github.com/chackoantony/photoflick"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'

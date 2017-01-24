@@ -4,7 +4,7 @@
 
 ## Dependency
 
-  PhotoFlick creates collages by using image processing tool ImageMagick. So you have to install ImageMagick first. 
+  PhotoFlick creates collages by using image processing tool [ImageMagick](https://www.imagemagick.org/script/index.php). So you have to install ImageMagick first. 
 
 
 ## Installation
@@ -25,7 +25,7 @@ Or install it yourself as:
 
 ## Usage
 
-  PhotoFlick will add an executable 'photoflick' to your system path. So you just need to run command 'photoflick' from your terminal and follow the onscreen instructions. 
+  PhotoFlick will add an executable 'photoflick' to your system path. You just need to run command 'photoflick' from your terminal and follow the onscreen instructions. 
 
 ## License
 

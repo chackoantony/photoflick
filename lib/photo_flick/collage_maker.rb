@@ -9,6 +9,7 @@ module PhotoFlick
       puts 'Please wait while processing images...'
       find_images
       create_collage
+      puts "Succesfully generated collage image #{Dir.pwd}/#{@output_file}"
       # clean up temp folder
       FileUtils.rm_rf('tmp')
     end

@@ -25,7 +25,7 @@ module PhotoFlick
       loop do
         @output_file = gets.chomp
         @output_file = 'output.jpg' if @output_file.empty?
-        break if valid_output_file?
+        break if valid_output_file?(@output_file)
         puts 'Sorry! This file format not supported.'
       end
     end

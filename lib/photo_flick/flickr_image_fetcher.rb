@@ -17,9 +17,12 @@ module PhotoFlick
 			@keywords.each do |keyword|
 				image = nil
         loop do
-          image = flickr.photos.search(text: keyword, sort: 'interestingness-desc', privacy_filter: 1, per_page: 1).first
+          image = flickr.photos.search(text: keyword, 
+                                       sort: 'interestingness-desc', 
+                                       privacy_filter: 1, 
+                                       per_page: 1).first
           break if image
-          # Repeat with a random word if keyword not found 
+          # Repeat with a random word if image not found 
           keyword = dictionary.get_random_words(1).first
         end   
         download_image(image)

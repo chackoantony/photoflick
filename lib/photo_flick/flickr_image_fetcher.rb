@@ -1,6 +1,6 @@
 module PhotoFlick
   # This class responsible for interacting with Flickr API
-	class FlickrImageFetcher
+  class FlickrImageFetcher
     require 'flickraw'
     require 'open-uri'
 
@@ -8,14 +8,14 @@ module PhotoFlick
     FlickRaw.shared_secret= ''
 
     def initialize(keywords)
-			@keywords = keywords
-		end
+      @keywords = keywords
+    end
 
-		# Get all images from Flickr
+    # Get all images from Flickr
     def fetch_images!
-			validate_keywords
-			@keywords.each do |keyword|
-				image = nil
+      validate_keywords
+      @keywords.each do |keyword|
+        image = nil
         loop do
           image = flickr.photos.search(text: keyword, 
                                        sort: 'interestingness-desc', 
@@ -29,29 +29,29 @@ module PhotoFlick
       end  
     end
 
-		private 
+    private 
 
     # Validate count of keywords
     def validate_keywords
-			return if (keyword_count = @keywords.length) == PhotoFlick::IMAGE_COUNT
+      return if (keyword_count = @keywords.length) == PhotoFlick::IMAGE_COUNT
       @keywords.concat dictionary.get_random_words(PhotoFlick::IMAGE_COUNT - keyword_count) 
-		end
+    end
 
-		# Downloads found images to 'tmp' folder
+    # Downloads found images to 'tmp' folder
     def download_image(image)
-			url = FlickRaw.url(image)
-			Dir.mkdir('tmp') unless File.exists? 'tmp'
-			open(url) do |f|
-				File.open("tmp/#{image['id']}.jpg","wb") do |file|
+      url = FlickRaw.url(image)
+      Dir.mkdir('tmp') unless File.exists? 'tmp'
+      open(url) do |f|
+        File.open("tmp/#{image['id']}.jpg","wb") do |file|
           file.puts f.read
         end
       end
-		end	
+    end 
 
     def dictionary
       @dictionary ||= PhotoFlick::Dictionary.new
     end
 
-	end
+  end
 
 end

@@ -5,11 +5,11 @@ module PhotoFlick
 
     def initialize
       path = File.expand_path('../../../data', __FILE__)
-      @file =  File.read("#{path}/words")
+      @words =  File.read("#{path}/words").split("\n")
     end
 
     def get_random_words(count)
-      @file.split("\n").sample(count)
+      @words.sample(count)
     end
 
   end
